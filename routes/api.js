@@ -4,6 +4,16 @@ const mongojs = require("mongojs");
 
 module.exports = function(app) {
 
+  app.get("/api/init", (req,res) => {
+    db.Day.find({})
+    .then(day => {
+      res.json(day);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+  })
+
     // list all days and workouts 
      app.get("/api/workouts", (req,res) => {
           db.Day.aggregate([
