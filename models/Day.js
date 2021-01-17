@@ -7,6 +7,7 @@ const DaySchema = new Schema({
   day: {
     type: String,
     trim: true,
+    default: Date.now,
     required: 'Day is requried'
   },
   exercises: [{
@@ -37,6 +38,16 @@ const DaySchema = new Schema({
       validate: [
           ({length}) => length >= 1,
           "weight must be 1 or more"
+        ]
+  
+    },
+    distance: {
+      type: Number,
+      trim: true,
+      required: "How Much?",
+      validate: [
+          ({length}) => length >= 1,
+          "distance must be 1 or more"
         ]
   
     },
