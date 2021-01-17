@@ -5,7 +5,7 @@ const mongojs = require("mongojs");
 module.exports = function(app) {
 
   app.get("/api/init", (req,res) => {
-    db.Day.find({})
+    db.Days.find({})
     .then(day => {
       res.json(day);
     })
