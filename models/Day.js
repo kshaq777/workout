@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const DaySchema = new Schema({
   
   day: {
-    type: String,
+    type: Date,
     trim: true,
     default: Date.now,
     required: 'Day is requried'
